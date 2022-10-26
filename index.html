@@ -278,136 +278,18 @@
                 </div>
 			</div>
         </div>
+	--> 
+
+      
 
 
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="text-justify">
-                    <br><br>
-                    Our method learns decoupled neural radiance fields, we can therefore render separate components from novel view. As a by-product, we better utilize the network capacity and learn more robust dynamic objects in the scene:  
-                    <br><br>
-                </div>
-                <div>
-                    <video id="editing-materials" width="100%" playsinline autoplay loop muted style="padding-top: 10px;">
-                        <source src="video/hypernerf_broom-vcam_compare_nv.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div class="video-compare-container-small" id="nvDiv">
-                    <video class="video" id="nv" loop playsinline autoPlay muted src="video/hypernerf_broom-vcam_compare_nv_hn.mp4" onplay="resizeAndPlay(this)"></video>
-                    
-                    <canvas height=0 class="videoMerge" id="nvMerge"></canvas>
-                </div>
-			</div>
-        </div> -->
 
 
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Video
-                </h3>
-                <div class="text-center">
-                    <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Reflection Direction Parameterization
-                </h3>
-                <div class="text-justify">
-                    Previous approaches directly input the camera's view direction into the MLP to predict outgoing radiance. We show that instead using the reflection of the view direction about the normal makes the emittance function significantly easier to learn and interpolate, greatly improving our results.
-                    
-                    <br><br>
-                    
-                </div>
-                <div class="text-center">
-                    <video id="refdir" width="40%" playsinline autoplay loop muted>
-                        <source src="video/reflection_animation.mp4" type="video/mp4" />
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Integrated Directional Encoding
-                </h3>
-                <div class="text-justify">
-                    We explicitly model object roughness using the expected values of a set of spherical harmonics under a von Mises-Fisher distribution whose concentration parameter varies spatially:
-                </div>
-                <br>
-                <div class="text-center">
-                    <img src="./img/ide.png" width="50%">
-                </div>
-                <br>
-                <div class="text-justify">
-                    We call this <i>Integrated Directional Encoding</i>, and we show experimentally that it allows sharing the emittance functions between points with different roughnesses. It also enables scene editing after training. Theoretically, our encoding is stationary on the sphere, similar to the Euclidean stationarity of NeRF's positional encoding. <br><br>
-                </div>
-                <div class="text-center">
-                    <video id="ide" width="100%" playsinline autoplay controls loop muted>
-                        <source src="video/ide_animation.mp4" type="video/mp4" />
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Additional Synthetic Results
-                </h3>
-                <div class="video-compare-container">
-                    <video class="video" id="musclecar" loop playsinline autoPlay muted src="video/musclecar_mipnerf_ours.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="musclecarMerge"></canvas>
-                </div>
-			</div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Results on Captured Scenes
-                </h3>
-                Our method also produces accurate renderings and surface normals from captured photographs:
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video" id="toycar" loop playsinline autoPlay muted src="video/toycar.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="toycarMerge"></canvas>
-                </div>
-			</div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Scene Editing
-                </h3>
-                <div class="text-justify">
-                    We show that our structured representation of the directional MLP allows for scene editing after training. Here we show that we can convincingly change material properties.
-                    <br>
-                    We can increase and decrease material roughness:
-                </div>
-
-                <div style="overflow: hidden;">
-                    <video id="editing-materials" width="100%" playsinline autoplay loop muted>
-                        <source src="video/pick_drop_compare_all.mp4" type="video/mp4" />
-                    </video>
-                </div>
-
-                
-
-            </div>
-        </div> -->
 
          <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Scene Editing
+                    Arbitrary scale results
                 </h3>
                 <div class="text-justify">
                     Next we show results for arbitrary scaling using our CUF upsampler combined with different encoders. Videos producing upsampling images from 1-8 times its original scale.
@@ -454,6 +336,41 @@
 
             </div>
         
+     
+     
+     
+     <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                          Our method produces the sharpest images, across different endoders.
+                    Next show its results across different images, encoders and upsampling scales.
+      
+     			 <br>
+
+                <div class="col-md-8 col-md-offset-2">
+
+                    <table width="100%">
+                        <tr>
+                            <td align="left" valign="top" width="50%">
+                                    <video class="video" preload="auto" id="birdliif" loop playsinline autoPlay muted src="video/bird_rdn-liif.mp4" onplay="resizeAndPlayDual(this, 'birdcuf')"></video>
+                                    
+                                    <canvas height=0 class="videoMerge" id="birdliifMerge"></canvas>
+                            </td>
+                            <td align="left" valign="top" width="50%">
+                                    <video class="video" preload="auto" id="birdcuf" loop playsinline autoPlay muted src="video/bird_rdn-ours.mp4"></video>
+                                    
+                                    <canvas height=0 class="videoMerge" id="birdcufMerge"></canvas>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div> -->
+                <!-- <div class="video-compare-container-small">
+                    <video class="video" id="shark" loop playsinline autoPlay muted src="video/shark_scam.mp4" onplay="resizeAndPlay(this)"></video>
+                    <canvas height=0 class="videoMerge" id="sharkMerge"></canvas>
+                </div> -->
+            <!-- </div>
+        </div>
+
      
 
         <div class="row">
