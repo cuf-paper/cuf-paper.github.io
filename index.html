@@ -404,44 +404,34 @@
             </div>
         </div> -->
 
-        <!-- <div class="row">
+         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
                     Scene Editing
                 </h3>
                 <div class="text-justify">
-                    We show that our structured representation of the directional MLP allows for scene editing after training. Here we show that we can convincingly change material properties.
+                    Next we show results for arbitrary scaling using our CUF upsampler combined with different encoders. Videos producing upsampling images from 1-8 times its original scale.
                     <br>
-                    We can increase and decrease material roughness:
+                    SwinIR + CUF
                 </div>
-
-                <div style="overflow: hidden;">
-                    <video id="editing-materials" width="100%" playsinline autoplay loop muted style="margin-top: -5%;">
-                        <source src="video/materials_rougher_smoother.mp4" type="video/mp4" />
-                    </video>
-                </div>
-
-                <div class="text-justify">
-                    We can also control the amounts of specular and diffuse colors, or change the diffuse color without affecting the specular reflections:
-                </div>
-                
+               
                 <table width="100%">
                     <tr>
                         <td align="left" valign="top" width="50%">
-                            <video id="v2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color2.mp4" type="video/mp4" />
+                            <video id="SwinIR_arbitrary_0" width="100%" playsinline autoplay loop muted>
+                                <source src="videos/swinir-flat_2x32_ours_img_0.mp4" type="video/mp4" />
                             </video>
                         </td>
                         <td align="left" valign="top" width="50%">
-                            <video id="v3" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color3.mp4" type="video/mp4" />
+                            <video id="SwinIR_arbitrary_1" width="100%" playsinline autoplay loop muted>
+                                <source src="videos/swinir-flat_2x32_ours_img_1.mp4" type="video/mp4" />
                             </video>
                         </td>
                     </tr>
                 </table>
 
             </div>
-        </div> -->
+        
      
 
         <div class="row">
