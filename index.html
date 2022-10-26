@@ -341,16 +341,15 @@
      
      <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                          Our method produces the sharpest images across different endoders at the same time that use the lowest memory and flop resources.
-                    Next show its results across different images, encoders and upsampling scales.
+		Our method produces the sharpest images across different endoders at the same time that use the lowest memory and flop resources.
+		Next show its results across different images, encoders and upsampling scales.
 
 
-     			 <br>
+		<br>
+		<br>
+		<br>
 
-		    Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
-		    <br>
-		    <strong>(left) CUF x LIIF;  (right) CUF X LTE.</strong>
-		     <br>
+		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
 		    
                 <div class="col-md-8 col-md-offset-2">
                 
@@ -358,11 +357,14 @@
                     <tbody>
                         <tr>
                             <td align="left" valign="top" width="50%">
+                             <strong>CUF x LIIF</strong>
+                            
                                     <video class="video" preload="auto" id="sidewalkliif" loop="" playsinline="" autoplay="" muted="" src="videos/swinir-ours-urban100_swinir-liif-urban100.mp4"   onplay="resizeAndPlayDual(this, 'sidewalklte')"  style="height: 0px;")"></video>
                                     
                                     <canvas height=480 width=640 class="videoMerge" id="sidewalkliifMerge"></canvas>                           
                             </td>
                             <td align="left" valign="top" width="50%">
+                             <strong>CUF X LTE.</strong>
                                     <video class="video" preload="auto" id="sidewalklte" loop playsinline autoPlay muted   src="videos/swinir-ours-urban100_swinir-lte-urban100.mp4" style="height: 0px;"></video>
                                     <canvas height=480 width=640 class="videoMerge" id="sidewalklteMerge"></canvas>
 
