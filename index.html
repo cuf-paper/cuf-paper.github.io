@@ -100,34 +100,8 @@
         </div>
 
        
-
-
-
-         <div class="row">
-		 <div class="col-md-8 col-md-offset-2">
-		        <h3>
-		            Archtecture and Method
-		        </h3>
-		
-		        <br>
-		Our method is based on modeling continuos upsampling filters conditioned on target scale, subpixel position and kernel positions.
-		<br><br>
-		
-		Visualization of the 64 filters learned for a EDSR-baseline encoder (left), the subpixel sample grid for a target upsampling of 4x on top of the continuos filter (center) and its corresponding discrete sampling (right).
-		<br><br>
-                <image src="img/continuous.png" class="img-responsive" alt="continuous" width="100%" style="max-height: 600px;margin:auto;">
-		
-		
-		        
-		        <br>
-		Our archtecture proposes a lightweight hyper-network with low number of channels per layer and by modeling a depthwise convolution. It is designed to support the decopling of the expansion of the spatial coordinates from the projection into target colors. At the same time, the pointwise layers not increase the number of channels relative to those adopted on the encoder. As a result, our method produces competitive results with sharp images across different endoders at the same time that requires the lowest memory and flop footprint.
-		<br><br>
-                <image src="img/arbitrary_scale.png" class="img-responsive" alt="CUF's architecture" width="100%" style="max-height: 600px;margin:auto;">
-		
-		 </div>
-         </div>
-
-
+       
+       
          <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -177,6 +151,60 @@
                 </table>
 
             </div>
+	</div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         <div class="row">
+		 <div class="col-md-8 col-md-offset-2">
+		        <h3>
+		            Archtecture and Method
+		        </h3>
+		
+		        <br>
+		Our method is based on modeling continuos upsampling filters conditioned on target scale, subpixel position and kernel positions.
+		<br><br>
+		
+		Visualization of the 64 filters learned for a EDSR-baseline encoder (left), the subpixel sample grid for a target upsampling of 4x on top of the continuos filter (center) and its corresponding discrete sampling (right).
+		<br><br>
+                <image src="img/continuous.png" class="img-responsive" alt="continuous" width="100%" style="max-height: 600px;margin:auto;">
+		
+		
+		        
+		        <br>
+		Our archtecture proposes a lightweight hyper-network with low number of channels per layer and by modeling a depthwise convolution. It is designed to support the decopling of the expansion of the spatial coordinates from the projection into target colors. At the same time, the pointwise layers not increase the number of channels relative to those adopted on the encoder. As a result, our method produces competitive results with sharp images across different endoders at the same time that requires the lowest memory and flop footprint.
+		<br><br>
+                <image src="img/arbitrary_scale.png" class="img-responsive" alt="CUF's architecture" width="100%" style="max-height: 600px;margin:auto;">
+		
+		 </div>
+         </div>
+
+
+       
         
      
      
