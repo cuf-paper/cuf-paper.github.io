@@ -563,35 +563,31 @@
                 <br><br>
 		<strong>On the impact of the encoder:</strong> Next, we illustrate a hard case where the combination of CUF with stronger encoder produces the best results. Features from  stronger encoders cover a larger receptive field that directly impacts the results on hard cases where the low-resolution input is ambiguos. Weaker econder clearly suffer from aliasing distortions on these cases. The comparisons show that the combinations with a lighter encoder (EDSR-baseline) perform poorly when compared with a larger encoder (SWINIR). Note that when comparing the different upsamplers under same encoder, CUF produces the sharpest results.
 		<br>
-                
-                <!--
-                
+                  
                 <div class="col-md-8 col-md-offset-2">
-                <br><br>
+		<br><br>
 		Encoder EDSR-baseline, scale 8x, dataset: Urban100, image id: #030.
 		<br>
-                
                     <table width="100%">
                     <tbody>
                         <tr>
                             <td align="left" valign="top" width="50%">
                              <strong>CUF x LIIF</strong>
                             
-                                    <video class="video" preload="auto" id="patt_edsr_liif" loop="" playsinline="" autoplay="" muted="" src="videos/patterns_4x_edsr-baseline-ours_edsr-baseline-liif.mp4"   onplay="resizeAndPlayDual(this, 'patt_edsr_lte')"  style="height: 0px;")"></video>
+                                    <video class="video" preload="auto" id="patt_edsr8x_liif" loop="" playsinline="" autoplay="" muted="" src="videos/patterns_8x_edsr-baseline-ours_edsr-baseline-liif.mp4"   onplay="resizeAndPlayDual(this, 'patt_edsr8x_lte')"  style="height: 0px;")"></video>
                                     
-                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr_liif_Merge"></canvas>                           
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr8x_liifMerge"></canvas>                           
                             </td>
                             <td align="left" valign="top" width="50%">
                              <strong>CUF X LTE.</strong>
-                                    <video class="video" preload="auto" id="patt_edsr_lte" loop playsinline autoPlay muted   src="videos/patterns_4x_edsr-baseline-ours_edsr-baseline-lte.mp4" style="height: 0px;"></video>
-                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr_lte_Merge"></canvas>
+                                    <video class="video" preload="auto" id="patt_edsr8x_lte" loop playsinline autoPlay muted   src="videos/patterns_8x_edsr-baseline-ours_edsr-baseline-lte.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr8x_lteMerge"></canvas>
 
                             </td>
                         </tr>
                     </tbody>
                     </table>
                 </div>
-                -->
                 
                  
                 <div class="col-md-8 col-md-offset-2">
