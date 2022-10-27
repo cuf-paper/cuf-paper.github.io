@@ -348,6 +348,10 @@
 		<h3>
                     Comparative results
                 </h3>
+                
+                <image src="img/qualitative.png" class="img-responsive" alt="qualitative" width="60%" style="max-height: 450px;margin:auto;">
+
+                
 		<br><br>
 		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
 		<br>
@@ -402,9 +406,12 @@
                     </table>
                 </div>  
                 
+                <h3>
+                    Hard case results
+                </h3>
                 
                 <br><br>
-		On the impact of the encoder. Next we illustrate a hard case where larger field of view impacts the quality of the encoded features, that is a lighter encoder (EDSR) performs poorly when compared with a larger encoder (SWINIR). When comparing the different upsamplers under same encoder, CUF produces the sharpest results.
+		On the impact of the encoder. Next we illustrate a hard case (8x upsampling) where the combination of CUF with stronger encoder preforms the best results. Stronger encoders cover a larger receptive field that directly impacts the quality of the encoded features. In the 8x upsampling shown a lighter encoder (EDSR) performs poorly when compared with a larger encoder (SWINIR). Note that for both scales illustrated when comparing the different upsamplers under same encoder, CUF produces the sharpest results.
 		<br>
                 
                 <br><br>
