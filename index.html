@@ -357,10 +357,11 @@
 		Next show its results across different images, encoders and upsampling scales.
 		<br><br>
                 <image src="img/qualitative.png" class="img-responsive" alt="qualitative" width="100%" style="max-height: 600px;margin:auto;">
-		<br><br>
+		
+                <div class="col-md-8 col-md-offset-2">
+                <br><br>
 		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
 		<br>
-                <div class="col-md-8 col-md-offset-2">
                 
                     <table width="100%">
                     <tbody>
@@ -448,10 +449,12 @@
 		On the impact of the encoder. Next we illustrate a hard case (8x upsampling) where the combination of CUF with stronger encoder preforms the best results. Stronger encoders cover a larger receptive field that directly impacts the quality of the encoded features. In the 8x upsampling shown a lighter encoder (EDSR) performs poorly when compared with a larger encoder (SWINIR). Note that for both scales illustrated when comparing the different upsamplers under same encoder, CUF produces the sharpest results.
 		<br>
                 
+                <!--
+                
+                <div class="col-md-8 col-md-offset-2">
                 <br><br>
 		Encoder EDSR, scale 8x, dataset: Urban100, image id: #030.
 		<br>
-                <div class="col-md-8 col-md-offset-2">
                 
                     <table width="100%">
                     <tbody>
@@ -498,7 +501,8 @@
                         </tr>
                     </tbody>
                     </table>
-                </div>               
+                </div>
+                -->               
                 
         </div> 
         <div class="row">
