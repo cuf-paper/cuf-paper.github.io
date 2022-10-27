@@ -344,6 +344,10 @@
 		<br><br><br>
 		Our method produces the sharpest images across different endoders at the same time that use the lowest memory and flop resources.
 		Next show its results across different images, encoders and upsampling scales.
+		<br><br><br>
+		<h3>
+                    Comparative results
+                </h3>
 		<br><br>
 		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
 		<br>
@@ -370,6 +374,12 @@
                     </table>
                 </div> 
                 
+                
+
+                
+                
+                
+                
 		<br><br>
 		Encoder RDN, scale 8x, dataset: Div2k, image id: #0853.
 		<br>
@@ -393,10 +403,65 @@
                     </tbody>
                     </table>
                 </div> 
-             </div> 
+                
+                
+                <br><br>
+		On the impact of the encoder. Next we illustrate a hard case where larger field of view impacts the quality of the encoded features, that is a lighter encoder (EDSR) performs poorly when compared with a larger encoder (SWINIR). When comparing the different upsamplers under same encoder, CUF produces the sharpest results.
+		<br>
+                
+                <br><br>
+		Encoder EDSR, scale 4x, dataset: Urban100, image id: #030.
+		<br>
+                <div class="col-md-8 col-md-offset-2">
+                
+                    <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF x LIIF</strong>
+                            
+                                    <video class="video" preload="auto" id="patt_edsr_liif" loop="" playsinline="" autoplay="" muted="" src="videos/patterns_edsr-baseline-ours_edsr-baseline-liif.mp4"   onplay="resizeAndPlayDual(this, 'patt_edsr_lte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr_liif_Merge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF X LTE.</strong>
+                                    <video class="video" preload="auto" id="patt_edsr_lte" loop playsinline autoPlay muted   src="videos/patterns_edsr-baseline-ours_edsr-baseline-lte.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_edsr_lte_Merge"></canvas>
 
-     
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                
+                 <br><br>
+		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #030.
+		<br>
+                <div class="col-md-8 col-md-offset-2">
+                
+                    <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF x LIIF</strong>
+                            
+                                    <video class="video" preload="auto" id="patt_swinir_liif" loop="" playsinline="" autoplay="" muted="" src="videos/patterns_swinir-ours-urban100_swinir-liif-urban100.mp4"   onplay="resizeAndPlayDual(this, 'patt_swinir_lte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_swinir_liifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF X LTE.</strong>
+                                    <video class="video" preload="auto" id="patt_swinir_lte" loop playsinline autoPlay muted   src="videos/patterns_swinir-ours-urban100_swinir-lte-urban100.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="patt_swinir_lteMerge"></canvas>
 
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>               
+                
+        </div> 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
