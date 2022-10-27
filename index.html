@@ -518,6 +518,36 @@
                 
                 
                 
+
+                <div class="col-md-8 col-md-offset-2">
+                <br><br>
+		Encoder SWINIR, scale 4x, dataset: DIV2k, image id: #0831.
+		<br>
+                
+                    <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF x LIIF</strong>
+                            
+                                    <video class="video" preload="auto" id="marketliif" loop="" playsinline="" autoplay="" muted="" src="videos/market_swinir-ours_swinir-liif.mp4"   onplay="resizeAndPlayDual(this, 'marketlte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="marketliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="50%">
+                             <strong>CUF X LTE.</strong>
+                                    <video class="video" preload="auto" id="marketlte" loop playsinline autoPlay muted   src="videos/market_swinir-ours_swinir-lte	.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="marketlteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                
+                
+                
+                
        </div>
      </div>
        
@@ -531,7 +561,7 @@
                 </h3>
                 
                 <br><br>
-		On the impact of the encoder. Next we illustrate a hard case (8x upsampling) where the combination of CUF with stronger encoder preforms the best results. Stronger encoders cover a larger receptive field that directly impacts the quality of the encoded features. In the 8x upsampling shown a lighter encoder (EDSR) performs poorly when compared with a larger encoder (SWINIR). Note that for both scales illustrated when comparing the different upsamplers under same encoder, CUF produces the sharpest results.
+		<strong>On the impact of the encoder:</strong> Next, we illustrate a hard case where the combination of CUF with stronger encoder produces the best results. Features from  stronger encoders cover a larger receptive field that directly impacts the results on hard cases where the low-resolution input is ambiguos. Weaker econder clearly suffer from aliasing distortions on these cases. The comparisons show that the combinations with a lighter encoder (EDSR-baseline) perform poorly when compared with a larger encoder (SWINIR). Note that when comparing the different upsamplers under same encoder, CUF produces the sharpest results.
 		<br>
                 
                 <!--
