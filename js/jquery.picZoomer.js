@@ -29,10 +29,10 @@
 		$zoomWP2.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
 		$zoomWP3.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
 		
-		$zoomWP.css(opts.zoomerPosition || {top: 0, left: opts.picWidth+10+'px'});
-		$zoomWP1.css(opts.zoomerPosition1 || {top: 0, left: 2*(opts.picWidth+10)+'px'});
-		$zoomWP2.css(opts.zoomerPosition2 || {top: 0, left: 3*(opts.picWidth+10)+'px'});
-		$zoomWP3.css(opts.zoomerPosition3 || {top: 0, left: 4*(opts.picWidth+10)+'px'});
+		$zoomWP.css(opts.zoomerPosition || {top: 0, left: opts.picWidth+5+'px'});
+		$zoomWP1.css(opts.zoomerPosition1 || {top: 0, left: 2*(opts.picWidth+5)+'px'});
+		$zoomWP2.css(opts.zoomerPosition2 || {top: 0, left: 3*(opts.picWidth+5)+'px'});
+		$zoomWP3.css(opts.zoomerPosition3 || {top: 0, left: 4*(opts.picWidth+5)+'px'});
 		 
 		
 		$zoomPic.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});
@@ -72,12 +72,12 @@
 
 	};
 	$.fn.picZoomer.defaults = {
-		picWidth: 160,
-		picHeight: 120,
+		picWidth: 205,
+		picHeight: 150,
 		scale: 12.0,
-		zoomerPosition: {top: '0', left: '170px'},
-		zoomerPosition1: {top: '0', left: '340px'},
-		zoomerPosition2: {top: '0', left: '510px'},
-		zoomerPosition3: {top: '0', left: '680px'}
+		zoomerPosition: {top: '0', left: '210px'},
+		zoomerPosition1: {top: '0', left: '420px'},
+		zoomerPosition2: {top: '0', left: '630px'},
+		zoomerPosition3: {top: '0', left: '840px'}
 	};
 })(jQuery);
