@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>CUF</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://cuf-paper.github.io/img/title_card.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/d2nerf/d2nerf">
+    <meta property="og:title" content="CUF: Continuous Upsampling Filters">
+    <meta property="og:description" content="Under construction.">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CUF: Continuous Upsampling Filters">
+    <meta name="twitter:description" content="Under Construction.">
+    <meta name="twitter:image" content="https://cuf-paper.github.io/img/title_card.png">
+
+
+    <!-- mirror: F0%9F%AA%9E&lt -->
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%E2%9C%A8&lt;/text&gt;&lt;/svg&gt;">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/codemirror.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/video_comparison.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="container" id="header" style="text-align: center; margin: auto;">
+        <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
+            <h2 class="col-md-12 text-center" id="title">
+                <b>CUF</b>: Continuous Upsampling Filters<br>
+                <!-- <small>
+                    CVPR 2022 (Oral Presentation)
+                </small> -->
+            </h2>
+        </div>
+        <div class="row" id="author-row" style="margin:0 auto;">
+            <div class="col-md-12 text-center" style="display: table; margin:0 auto">
+                <table class="author-table" id="author-table">
+                    <tr>
+                        <td>
+                            <a style="text-decoration:none" href="">
+                                Anonymous Author(s)
+                            </a>
+                            <br>Affiliation
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('author-row').style.maxWidth = document.getElementById("title-row").clientWidth + 'px';
+    </script>
+    <div class="container" id="main">
+        <div class="row">
+                <div class="col-md-4 col-md-offset-4 text-center">
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <a href="cuf.pdf">
+                            <img src="./img/paper_icon.png" height="90px">
+                                <h4><strong>Paper (anonymized) with supp</strong></h4>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="https://drive.google.com/drive/folders/1qm-8P6UqrhimZXp4USzFPumyfu8l1vto?usp=sharing">
+                            <img src="./img/data_icon.webp" height="90px">
+                                <h4><strong>Data</strong></h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/cuf-paper.github.io/cuf-paper/">
+                            <img src="./img/github_icon.svg" height="90px">
+                                <h4><strong>Code</strong></h4>
+                            </a>
+                        </li> -->
+                        <!-- <li>
+                            <a href="">
+                            <img src="./img/youtube_icon.png" height="90px">
+                                <h4><strong>Video</strong></h4>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+                
+        </div>
+
+     <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+		<br><br><br>
+		<h3>
+                    <a href="https://cuf-paper.github.io/">(back to main page)</a>
+                </h3>
+            </div>
+    </div>
+                     
+     
+     
+     <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+		<br><br><br>
+		<h3>
+                    Comparative results (extra)
+                </h3>
+                <br>
+		Our arbitrary-scale upsampler produces the sharpest images at reduced computational costs (lowest memory and number of operations).
+		The presented results illustrate its performance when combined with different encoders and at different upsampling scales.
+		<br><br>
+                <image src="img/qualitative.png" class="img-responsive" alt="qualitative" width="100%">
+                <!--
+                 style="max-height: 600px;margin:auto;">
+                 
+                 
+                 -->
+		 
+		 
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder SWINIR, scale 4x, dataset: Urban100, image id: #008.
+		<br>
+                    <table width="100%">
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td><strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    <tr> 
+                    <td align="left" valign="top" width="33%">
+                    <video id="sidewalkinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_sidewalk.mp4" type="video/mp4">
+                    </video>
+                    </td> 
+                    <td align="left" valign="top" width="33%">
+                    <video class="video" preload="auto" id="sidewalkliif" loop="" playsinline="" autoplay="" muted="" src="videos/swinir-ours-urban100_swinir-liif-urban100.mp4"   onplay="resizeAndPlayDual(this, 'sidewalklte')" style="width: 50%;"></video>
+                    <canvas height=0 class="videoMerge" id="sidewalkliifMerge"></canvas> 
+                    </td>
+                    <td align="left" valign="top" width="33%">
+                    <video class="video" preload="auto" id="sidewalklte" loop playsinline autoPlay muted   src="videos/swinir-ours-urban100_swinir-lte-urban100.mp4" style="width: 50%;"></video>
+                    <canvas height=0  class="videoMerge" id="sidewalklteMerge"></canvas>
+                    </td>
+                    </tr> 
+                    </table>
+                </div> 
+                
+               
+                   <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder EDSR-baseline, scale 4x, dataset: Div2k, image id: #0826.
+		<br>
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td>
+                    <strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    <tr> 
+                    <td align="left" valign="top" width="33%">
+                    <video id="pagodainput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_pagoda.mp4" type="video/mp4">
+                    </video>
+                    </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="pagodaliif" loop="" playsinline="" autoplay="" muted="" src="videos/pagoda_edsr-baseline-ours_edsr-baseline-liif.mp4" onplay="resizeAndPlayDual(this, 'pagodalte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="pagodaliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="pagodalte" loop playsinline autoPlay muted src="videos/pagoda_edsr-baseline-ours_edsr-baseline-lte.mp4"  style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="pagodalteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div> 
+                            
+                
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder RDN, scale 4x, dataset: Div2k, image id: #0891.
+		<br>
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td>
+                    <strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    <tr> 
+                    <td align="left" valign="top" width="33%">
+                    <video id="facadeinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_facade.mp4" type="video/mp4">
+                    </video>
+                    </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="facadeliif" loop="" playsinline="" autoplay="" muted="" src="videos/facade_rdn-ours_rdn-liif.mp4" onplay="resizeAndPlayDual(this, 'facadelte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="facadeliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="facadelte" loop playsinline autoPlay muted src="videos/facade_rdn-ours_rdn-lte.mp4"  style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="facadelteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div> 
+              
+                
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder EDSR-baseline, scale 3x, dataset: B100, image id: #86016.
+		<br>
+                
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td><strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right)</strong></td>
+                    </tr>
+                    <tr>
+                    <td align="left" valign="top" width="33%">
+                    <video id="sandinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_sand.mp4" type="video/mp4">
+                    </video>
+                    </td> 
+                    <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="sandliif" loop="" playsinline="" autoplay="" muted="" src="videos/sand_edsr-cuf-b100_edsr-liif-b100.mp4"   onplay="resizeAndPlayDual(this, 'sandlte')"  style="height: 0px;"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="sandliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="sandlte" loop playsinline autoPlay muted   src="videos/sand_edsr-cuf-b100_edsr-lte-b100.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="sandlteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div> 
+                
+                
+                
+                
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder EDSR-baseline, scale 4x, dataset: Urban100, image id: #030.
+		<br>
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td>
+                    <strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    
+                    <tr>
+                    <td align="left" valign="top" width="33%">
+                    <video id="lowres_input_patterns_4xinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_patterns_4x.mp4" type="video/mp4">
+                    </video>
+                    </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="patternliif" loop="" playsinline="" autoplay="" muted="" src="videos/patterns_4x_edsr-baseline-ours_edsr-baseline-liif.mp4"   onplay="resizeAndPlayDual(this, 'patternlte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="patternliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%">
+                                    <video class="video" preload="auto" id="patternlte" loop playsinline autoPlay muted   src="videos/patterns_4x_edsr-baseline-ours_edsr-baseline-lte.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="patternlteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div> 
+                
+	
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder RDN, scale 8x, dataset: Div2k, image id: #0853.
+		<br>
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td>
+                    <strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    <tr> 
+                    <td align="left" valign="top" width="33%">
+                    <video id="birdinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_bird.mp4" type="video/mp4">
+                    </video>
+                    </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="birdliif" loop="" playsinline="" autoplay="" muted="" src="videos/bird_rdn-ours_rdn-liif.mp4" onplay="resizeAndPlayDual(this, 'birdlte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="birdliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="birdlte" loop playsinline autoPlay muted src="videos/bird_rdn-ours_rdn-lte.mp4"  style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="birdlteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>  
+                
+               
+                
+                
+                 
+                
+                
+                
+                
+
+                <div class="col-md-12 col-md-offset-0">
+                <br><br>
+		Encoder SWINIR, scale 4x, dataset: DIV2k, image id: #0831.
+		<br>
+                
+                    <table width="100%">
+                    <tbody>
+                    <tr>
+                    <td><strong>LR input</strong></td>
+                    <td>
+                    <strong>CUF (left) vs. LIIF(right)</strong></td>
+                    <td><strong>CUF (left) vs. LTE(right).</strong></td>
+                    </tr>
+                    <tr> 
+                    <td align="left" valign="top" width="33%">
+                    <video id="marketinput" width="100%" playsinline="" autoplay="" loop="" muted="" style="padding-top: 20px;">
+                        <source src="videos/lowres_input_market.mp4" type="video/mp4">
+                    </video>
+                    </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="marketliif" loop="" playsinline="" autoplay="" muted="" src="videos/market_swinir-ours_swinir-liif.mp4"   onplay="resizeAndPlayDual(this, 'marketlte')"  style="height: 0px;")"></video>
+                                    
+                                    <canvas height=480 width=640 class="videoMerge" id="marketliifMerge"></canvas>                           
+                            </td>
+                            <td align="left" valign="top" width="33%"> 
+                                    <video class="video" preload="auto" id="marketlte" loop playsinline autoPlay muted   src="videos/market_swinir-ours_swinir-lte	.mp4" style="height: 0px;"></video>
+                                    <canvas height=480 width=640 class="videoMerge" id="marketlteMerge"></canvas>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                
+                
+                
+                
+       </div>
+     </div>
+       
+       
+     
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                The website template was adapted from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a> webpage with authors consent.
+                </p>
+                <p class="text-justify">
+                    The ablations replicating previous models were made under LIIF, LTE, SwinIR and ABPN public codebases. We thank the authors for sharing their codes.
+                </p>
+            </div>
+        </div> 
+        <div class="row"> <div class="col-md-8 col-md-offset-2">
+            <em>Please refresh the page if videos are not loaded or appear unsynced.</em>
+        </div> </div>
+    </div>
+   
+
+
+</body></html>
+
