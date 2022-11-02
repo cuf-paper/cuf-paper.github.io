@@ -5,10 +5,10 @@
 			$this = this,
 			$picBD = $('<div class="picZoomer-pic-wp"></div>').css({'width':opts.picWidth+'px', 'height':opts.picHeight+'px'}).appendTo($this),
 			$pic = $this.children('img').addClass('picZoomer-pic').appendTo($picBD), 
-			//$cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>').appendTo($picBD),
-			//cursorSizeHalf = {w:$cursor.width()/2 ,h:$cursor.height()/2},
+			$cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>').appendTo($picBD),
+			cursorSizeHalf = {w:$cursor.width()/2 ,h:$cursor.height()/2},
 			
-			$zoomWP = $('<div class="picZoomer-zoom-wp"><p>LR input</p><img src="" alt="" class="picZoomer-zoom-pic"></div>').appendTo($this),
+			$zoomWP = $('<div class="picZoomer-zoom-wp"><img src="" alt="" class="picZoomer-zoom-pic"></div>').appendTo($this),
 			$zoomPic = $zoomWP.find('.picZoomer-zoom-pic'),
 			$zoomWP1 = $('<div class="picZoomer-zoom-wp1"><img src="" alt="" class="picZoomer-zoom-pic1"></div>').appendTo($this),
 			$zoomPic1 = $zoomWP1.find('.picZoomer-zoom-pic1'),
@@ -41,7 +41,8 @@
 		$zoomPic3.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});    
 		 
 		$picBD.on('mouseenter',function(event){
-			//$cursor.show();
+			// $cursor.show();
+			$cursor.hide();
 			$zoomWP.show();
 			$zoomWP1.show();
 			$zoomWP2.show();
@@ -51,7 +52,8 @@
 			$zoomPic2.attr('src',$pic.attr('src2'));
 			$zoomPic3.attr('src',$pic.attr('src3'))
 		}).on('mouseleave',function(event){
-			//$cursor.hide();
+			//
+			$cursor.hide();
 			$zoomWP.hide();
 			$zoomWP1.hide();
 			$zoomWP2.hide();
@@ -59,8 +61,7 @@
 		}).on('mousemove', function(event){
 			var x = event.offsetX,
 			    y = event.offsetY;
-
-			//$cursor.css({'left':x-cursorSizeHalf.w+'px', 'top':y-cursorSizeHalf.h+'px'});
+			$cursor.css({'left':x-cursorSizeHalf.w+'px', 'top':y-cursorSizeHalf.h+'px'});
 			
 			$zoomPic.css({'left':-(x*opts.scale-zoomWPSizeHalf.w)+'px', 'top':-(y*opts.scale-zoomWPSizeHalf.h)+'px'});
 			$zoomPic1.css({'left':-(x*opts.scale-zoomWPSizeHalf.w)+'px', 'top':-(y*opts.scale-zoomWPSizeHalf.h)+'px'});
@@ -72,12 +73,12 @@
 
 	};
 	$.fn.picZoomer.defaults = {
-		picWidth: 225,
-		picHeight: 150,
+		picWidth: 400,
+		picHeight: 300,
 		scale: 12.0,
-		zoomerPosition: {top: '0', left: '230px'},
-		zoomerPosition1: {top: '0', left: '460px'},
-		zoomerPosition2: {top: '0', left: '690px'},
-		zoomerPosition3: {top: '0', left: '920px'}
+		zoomerPosition: {top: '0', left: '410px'},
+		zoomerPosition3: {top: '300', left: '0px'},
+		zoomerPosition1: {top: '300', left: '410px'},
+		zoomerPosition2: {top: '300', left: '820px'}
 	};
 })(jQuery);
