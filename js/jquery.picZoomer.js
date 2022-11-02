@@ -72,12 +72,12 @@
 
 	};
 	$.fn.picZoomer.defaults = {
-		picWidth: 205,
+		picWidth: 225,
 		picHeight: 150,
 		scale: 12.0,
-		zoomerPosition: {top: '0', left: '210px'},
-		zoomerPosition1: {top: '0', left: '420px'},
-		zoomerPosition2: {top: '0', left: '630px'},
-		zoomerPosition3: {top: '0', left: '840px'}
+		zoomerPosition: {top: '0', left: '230px'},
+		zoomerPosition1: {top: '0', left: '460px'},
+		zoomerPosition2: {top: '0', left: '690px'},
+		zoomerPosition3: {top: '0', left: '920px'}
 	};
 })(jQuery);
