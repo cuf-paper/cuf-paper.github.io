@@ -24,10 +24,10 @@
 		opts.zoomHeight = opts.zoomHeight||opts.picHeight;
 		var zoomWPSizeHalf = {w:opts.zoomWidth/2 ,h:opts.zoomHeight/2};
 
-		$zoomWP.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
-		$zoomWP1.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
-		$zoomWP2.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
-		$zoomWP3.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
+		$zoomWP.css({'width':opts.zoomWidth+'%', 'height':opts.zoomHeight+'%'});
+		$zoomWP1.css({'width':opts.zoomWidth+'%', 'height':opts.zoomHeight+'%'});
+		$zoomWP2.css({'width':opts.zoomWidth+'%', 'height':opts.zoomHeight+'%'});
+		$zoomWP3.css({'width':opts.zoomWidth+'%', 'height':opts.zoomHeight+'%'});
 		
 		$zoomWP.css(opts.zoomerPosition || {top: 0, left: opts.picWidth+5+'px'});
 		$zoomWP1.css(opts.zoomerPosition1 || {top: 0, left: 2*(opts.picWidth+5)+'px'});
@@ -35,10 +35,10 @@
 		$zoomWP3.css(opts.zoomerPosition3 || {top: 0, left: 4*(opts.picWidth+5)+'px'});
 		 
 		
-		$zoomPic.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});
-		$zoomPic1.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});  
-		$zoomPic2.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});  
-		$zoomPic3.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});    
+		$zoomPic.css({'width':opts.picWidth*opts.scale+'%', 'height':opts.picHeight*opts.scale+'%'});
+		$zoomPic1.css({'width':opts.picWidth*opts.scale+'%', 'height':opts.picHeight*opts.scale+'%'});  
+		$zoomPic2.css({'width':opts.picWidth*opts.scale+'%', 'height':opts.picHeight*opts.scale+'%'});  
+		$zoomPic3.css({'width':opts.picWidth*opts.scale+'%', 'height':opts.picHeight*opts.scale+'%'});    
 		 
 		$picBD.on('mouseenter',function(event){
 			// $cursor.show();
@@ -73,8 +73,9 @@
 
 	};
 	$.fn.picZoomer.defaults = {
-		picWidth: 240,
-		picHeight: 180,
+		//picWidth: 0*240,
+		picHeight: '30%',
+		picWidth: '30%',
 		
 		scale: 12.0,
 		zoomerPosition: {top: '0', left: '250px'},
